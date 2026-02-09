@@ -1,0 +1,35 @@
+// ============================================
+// coffemaker - Main Stylesheet
+// ============================================
+//
+// Import order matters:
+//  1. Variables & Functions (no output)
+//  2. Reset (normalize browser defaults)
+//  3. Global base styles (typography, body)
+//  4. Utility classes
+//  5. Component styles (add below as needed)
+// ============================================
+
+// --- Foundation (no CSS output) ---
+@use 'variables';
+@use 'functions';
+@use 'mixins';
+
+// --- Base ---
+@use 'reset';
+@use 'globals';
+
+// --- Utilities ---
+@use 'utils';
+
+// ============================================
+// COMPONENT IMPORTS
+// Add your component SCSS files here:
+// ============================================
+//
+// @use 'components/header';
+// @use 'components/sidebar';
+// @use 'components/product-card';
+// @use 'components/hero';
+// @use 'components/footer';
+// ...

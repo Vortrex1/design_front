@@ -1,0 +1,82 @@
+@use 'sass:math';
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:list';
+
+// ============================================
+// UNIT CONVERSION
+// ============================================
+
+/// Convert px to rem (base 16px)
+/// @param {Number} $px - value in pixels
+/// @return {Number} - value in rem
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+/// Convert px to em
+/// @param {Number} $px - value in pixels
+/// @param {Number} $base - base font-size in pixels [16]
+/// @return {Number} - value in em
+@function em($px, $base: 16) {
+  @return math.div($px, $base) * 1em;
+}
+
+// ============================================
+// COLOR HELPERS
+// ============================================
+
+/// Lighten color by mixing with white
+/// @param {Color} $clr
+/// @param {Number} $amount - 0-100
+/// @return {Color}
+@function tint($clr, $amount) {
+  @return mix(#fff, $clr, $amount);
+}
+
+/// Darken color by mixing with black
+/// @param {Color} $clr
+/// @param {Number} $amount - 0-100
+/// @return {Color}
+@function shade($clr, $amount) {
+  @return mix(#000, $clr, $amount);
+}
+
+/// Create semi-transparent version of a color
+/// @param {Color} $clr
+/// @param {Number} $opacity - 0-1
+/// @return {Color}
+@function alpha($clr, $opacity) {
+  @return rgba($clr, $opacity);
+}
+
+// ============================================
+// SPACING / SIZING
+// ============================================
+
+/// Multiply base spacing unit (8px grid)
+/// @param {Number} $n - multiplier
+/// @return {Number} - result in rem
+@function spacing($n) {
+  @return $n * 0.5rem;
+}
+
+/// Clamp a value between min and max
+/// @param {Number} $min
+/// @param {Number} $preferred
+/// @param {Number} $max
+/// @return {String}
+@function fluid($min, $preferred, $max) {
+  @return clamp(#{$min}, #{$preferred}, #{$max});
+}
+
+// ============================================
+// STRING / LIST HELPERS
+// ============================================
+
+/// Remove units from number
+/// @param {Number} $value
+/// @return {Number}
+@function strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}

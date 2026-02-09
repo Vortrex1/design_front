@@ -1,0 +1,103 @@
+
+.adminPanel {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  min-height: 100vh;
+  border-radius: 0;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  overflow: hidden;
+}
+
+.sidebarWrapper {
+  background: linear-gradient(180deg, #181b1e 0%, #23272b 100%);
+  border-radius: 0;
+  box-shadow: 2px 0 16px 0 rgba(0,0,0,0.10);
+  padding: 0;
+  min-height: 80vh;
+  border-right: 2px solid #232526;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s;
+}
+
+.contentWrapper {
+  background: rgba(255,255,255,0.97);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
+  min-height: 80vh;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s;
+}
+
+/* Sidebar nav custom styles */
+.sidebarNav {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebarNavItem {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.sidebarNavLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #e0e0e0;
+  font-size: 1.08rem;
+  font-weight: 500;
+  padding: 0.85rem 1.2rem;
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s;
+  letter-spacing: 0.01em;
+}
+.sidebarNavLink:hover,
+.sidebarNavLink:focus {
+  background: #232526;
+  color: #ffd600;
+}
+.sidebarNavLinkActive {
+  background: linear-gradient(90deg, #ffd600 0%, #ffb300 100%);
+  color: #232526 !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px 0 rgba(255, 214, 0, 0.08);
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1.2rem;
+  padding-left: 1.2rem;
+}
+.sidebarHeaderIcon {
+  font-size: 2.2rem;
+  color: #ffd600;
+}
+.sidebarHeaderTitle {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.sidebarFooter {
+  margin-top: auto;
+  padding: 1.5rem 0 0.5rem 0;
+  border-top: 1px solid #343a40;
+  text-align: center;
+}
+.sidebarFooterText {
+  color: #bdbdbd;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding: 1rem 0.5rem;
+  }
+}

@@ -1,0 +1,70 @@
+.starRating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.starsContainer {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star {
+  font-size: 2rem;
+  color: #e0e0e0;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.star.half::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #ffc107;
+}
+
+.ratingValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+/* Стилі для компактного відображення в картках */
+.starRating.compact {
+  flex-direction: row;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.starRating.compact .starsContainer {
+  gap: 0.125rem;
+}
+
+.starRating.compact .star {
+  font-size: 1rem;
+}
+
+.starRating.compact .ratingValue {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .star {
+    font-size: 1.5rem;
+  }
+
+  .ratingValue {
+    font-size: 0.875rem;
+  }
+
+  .starRating.compact .star {
+    font-size: 0.875rem;
+  }
+}
